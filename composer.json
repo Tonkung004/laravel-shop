@@ -1,0 +1,93 @@
+{
+    "name": "xmen/xshop",
+    "type": "project",
+    "description": "Very customizable and easy to use shopping system, open source project based on laravel",
+    "keywords": ["xshop", "e-shop", "laravel","laravel-shop","open-source-shop"],
+    "license": "GPL-3.0-or-later",
+    "require": {
+        "php": "^8.2",
+        "ext-dom": "*",
+        "ext-zip": "*",
+        "carlos-meneses/laravel-mpdf": "^2.1",
+        "chillerlan/php-qrcode": "^5.0",
+        "dpsoft/mellat": "^1.1",
+        "dpsoft/parsian-payment": "^1.0",
+        "dpsoft/pay.ir": "dev-master",
+        "dpsoft/saderat": "^4.0",
+        "dpsoft/zibal": "^2.0",
+        "fahlisaputra/laravel-minify": "^1.1",
+        "laravel/framework": "^11.0",
+        "laravel/sanctum": "^4.0",
+        "laravel/tinker": "^2.9",
+        "laravel/ui": "^4.5",
+        "pishran/zarinpal": "^4.3",
+        "plank/laravel-metable": "^6.0",
+        "ryangjchandler/blade-cache-directive": "^1.0",
+        "spatie/laravel-medialibrary": "^11.4",
+        "spatie/laravel-permission": "^6.7",
+        "spatie/laravel-tags": "^4.6",
+        "spatie/laravel-translatable": "^6.6",
+        "thiagocordeiro/laravel-translator": "^1.2"
+    },
+    "require-dev": {
+        "barryvdh/laravel-ide-helper": "^3.0",
+        "fakerphp/faker": "^1.23",
+        "laravel/pint": "^1.13",
+        "laravel/sail": "^1.26",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^8.0",
+        "phpunit/phpunit": "^11.0.1",
+        "spatie/laravel-ignition": "^2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        },
+        "files": [
+            "app/Helpers/Helper.php"
+        ],
+        "classmap": [
+            "resources/views/segments"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi",
+            "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
+            "@php artisan migrate --graceful --ansi"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

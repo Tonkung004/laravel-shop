@@ -1,0 +1,38 @@
+.ParallaxHeaderPin {
+    background-size: cover;
+    background-attachment: fixed;
+    height: 270px;
+    color: var(--xshop-diff);
+    padding-top: 3rem;
+
+    h2{
+        opacity: .4;
+        margin-bottom: 3rem;
+        max-height: 2.1em;
+        overflow: hidden;
+    }
+
+    .fake-container{
+        background: var(--xshop-background);
+        border-radius: var(--xshop-border-radius);
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        height: 100px;
+        position: relative;
+        &:after{
+            position: absolute;
+            left: 0;
+            right: 0;
+            content: ' ';
+            height: 10px;
+            bottom: -5px;
+            background: var(--xshop-background);
+        }
+    }
+
+    + .content{
+        margin-top: -3rem;
+        position: relative;
+        z-index: 11;
+    }
+}

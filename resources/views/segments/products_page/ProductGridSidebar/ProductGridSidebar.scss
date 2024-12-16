@@ -1,0 +1,84 @@
+.ProductGridSidebar {
+    padding: 1rem 0;
+
+    h1{
+        font-size: 30px;
+        font-weight: 200;
+        text-align: center;
+        position: relative;
+        margin-bottom: 1rem;
+        padding-bottom: 4px;
+        &:after{
+            position: absolute;
+            content: ' ';
+            height: 1px;
+            width: 70%;
+            bottom: 0;
+            left: 15%;
+            right: 15%;
+            background: linear-gradient(90deg,#ffffff00 0%, var(--xshop-primary) 50%, #ffffff00 100%);
+        }
+    }
+    img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+
+    aside{
+
+        h4{
+            background: var(--xshop-primary);
+            color: var(--xshop-diff);
+            padding: .5rem 1rem;
+            text-align: center;
+            border-radius: var(--xshop-border-radius);
+            opacity: .75;
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+
+        .side-item{
+            background: #00000010;
+            border-radius: var(--xshop-border-radius);
+            margin-bottom: 1rem;
+            .side-data{
+                padding: 1rem;
+            }
+        }
+
+        .side-list{
+            ul{
+                list-style: none;
+                padding: 0;
+                padding-top: 2px;
+                li{
+                    position: relative;
+                    padding: 2px;
+                    a{
+                        display: block;
+                    }
+                    &:before{
+                        position: absolute;
+                        content: "\F035";
+                        font-family: 'remixicon';
+                        inset-inline-start: -20px;
+                        top: -2px;
+                        color: var(--xshop-secondary);
+                    }
+
+                    &.active{
+                        padding-top: 5px;
+                        padding-bottom: 0;
+                        background: var(--xshop-primary);
+                        a{
+                            color: var(--xshop-diff);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

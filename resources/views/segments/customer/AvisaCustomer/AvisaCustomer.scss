@@ -1,0 +1,174 @@
+#AvisaCustomer {
+    padding: 2rem 0;
+
+    .avisa-avatar {
+        height: 128px;
+        width: 128px;
+        display: block;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: auto;
+        cursor: pointer;
+        margin-bottom: 1rem;
+    }
+
+    #avisa-tabs {
+        list-style: none;
+        padding: 1rem 0;
+        margin: 1rem 0;
+        border-radius: var(--xshop-border-radius);
+
+        background: var(--xshop-primary);
+
+        li {
+            a {
+                padding: .5rem 1rem;
+                color: var(--xshop-diff);
+                display: block;
+                font-size: 20px;
+                transition: 500ms;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow-x: hidden;
+
+                &.active, &:hover {
+                    background: var(--xshop-secondary);
+                    color: var(--xshop-diff2);
+                }
+            }
+
+            i {
+                margin: 0 1rem;
+            }
+
+        }
+    }
+
+    .avisa-grid {
+        .grid-item {
+            overflow: hidden;
+            height: 200px;
+            border-radius: var(--xshop-border-radius);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+
+            i {
+                position: absolute;
+                transform: rotateZ(-17deg);
+                inset-inline-start: 7%;
+                top: -10%;
+                font-size: 75px;
+                opacity: .3;
+            }
+
+            h3 {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: .2rem;
+                text-align: center;
+                opacity: .7;
+            }
+        }
+
+        &:nth-child(1) {
+            .grid-item {
+                background: rgba(248, 124, 0, 0.63);
+            }
+        }
+
+        &:nth-child(2) {
+            .grid-item {
+                background: rgba(184, 11, 109, 0.63);
+            }
+        }
+
+        &:nth-child(3) {
+            .grid-item {
+                background: rgba(11, 184, 123, 0.63);
+            }
+        }
+
+        &:nth-child(4) {
+            .grid-item {
+                background: rgba(11, 112, 184, 0.63);
+            }
+        }
+
+        &:nth-child(5) {
+            .grid-item {
+                background: rgba(253, 237, 63, 0.83);
+            }
+        }
+
+        &:nth-child(6) {
+            .grid-item {
+                background: rgba(139, 32, 253, 0.58);
+            }
+        }
+    }
+
+
+    .avisa-comment {
+        border: 1px solid var(--xshop-primary);
+        padding: 1rem;
+        border-radius: var(--xshop-border-radius);
+        margin-bottom: 1rem;
+
+        h3 {
+            font-size: 17px;
+        }
+
+        .comment-date {
+            background: var(--xshop-secondary);
+            color: var(--xshop-diff2);
+            padding: 7px;
+            border-radius: var(--xshop-border-radius);
+        }
+    }
+    .product-item{
+        margin-bottom: 1rem;
+        border-radius: var(--xshop-border-radius);
+        border: 1px solid var(--xshop-primary);
+        overflow: hidden;
+
+        .fav-btn, .compare-btn {
+            border-radius: var(--xshop-border-radius);
+            background: #ffffff55;
+            font-size: 25px;
+            display: inline-block;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: .4s;
+            min-width: 100px;
+            text-align: center;
+            margin-top: -7px;
+            &:hover {
+                background: var(--xshop-primary);
+                color: var(--xshop-diff);
+            }
+        }
+
+        .fav-btn {
+            top: calc(3% + 50px);
+
+            &[data-is-fav="-1"]{
+                display: none;
+            }
+            &[data-is-fav="1"]{
+                .ri-heart-line{
+                    display: none;
+                }
+            }
+            &[data-is-fav="0"]{
+                .ri-heart-fill{
+                    display: none;
+                }
+            }
+        }
+    }
+}

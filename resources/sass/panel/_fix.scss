@@ -1,0 +1,64 @@
+.form-control:focus,.form-check-input:focus{
+    box-shadow: 0 0 0 0.25rem rgba(133, 13, 253, 0.25);
+border-color: #bc86fe;
+}
+
+.forms{
+
+    .card{
+        background-color: rgba(var(--bs-body-bg),.5);
+        background-image: url("../../images/pattern.png");
+        backdrop-filter: blur(4px);
+        box-shadow: -2px -2px 7px #560000, 2px 2px 7px #5e00b5;
+    }
+}
+
+main{
+    .card{
+        background-color: $lighter-color;
+        border: 0;
+        .card-header{
+            background: #00000011;
+            border: 0;
+            text-align: center;
+        }
+
+        .card-footer{
+            .btn{
+                min-width: 200px;
+                width: 10%;
+                display: block;
+                margin: auto;
+            }
+        }
+    }
+}
+
+
+
+.form-check-input:checked,.btn-primary{
+    background-color: #a60087;
+    border-color: #ff0067;
+}
+
+.btn-primary:hover{
+    background-color: #ff0067;
+}
+
+a,a:visited{
+    color: white;
+    &:hover{
+        color: #ff0067;
+    }
+}
+
+.pagination{
+    --bs-pagination-active-bg: #6e0000 ;
+    --bs-pagination-active-border-color: #810000;
+    --bs-pagination-color: #cb00a5;
+    --bs-pagination-hover-color: red;
+}
+
+.v-toast__item{
+    width: 275px ;
+}
