@@ -18,12 +18,10 @@
 - UI/UX is more specific
 - Developer Friendlier
 
-
-
 ## Installation [ Development mode ]
 
 > [!IMPORTANT]  
-> Create new database and rename `.env.example` to `.env` then update you `.env` configs so run this commands:
+> Create new database and rename `.env.example` to `.env` then update your `.env` configs, and run these commands:
 
 ```bash
 git clone https://github.com/4xmen/xshop.git
@@ -38,30 +36,27 @@ php artisan serv
 # to develop front-end
 npm i
 php artisan client
-npm install @rollup/rollup-win32-x64-msvc # just for windows if the below line dose not work
+npm install @rollup/rollup-win32-x64-msvc # just for windows if the below line does not work
 npm run dev
 
 # or with yarn
-
 yarn install
 php artisan client
-yarn add @rollup/rollup-win32-x64-msvc # just for windows if the below line dose not work
+yarn add @rollup/rollup-win32-x64-msvc # just for windows if the below line does not work
 yarn dev
-
 ```
 
 > [!TIP]
-> Default admin email is : `developer@example.com` (developer) or `admin@example.com` (admin) and default password is: `password`
+> Default admin email is: `developer@example.com` (developer) or `admin@example.com` (admin) and default password is: `password`
 
+## Image Seeding 
 
-## image seeding 
-
-- Download & prepare images 
+- Download & prepare images:  
 ```bash
 php artisan seeding:prepare
- ```
-- nor copy your image folder to `database/seeders/images/` 
-- then: Seeding image for models: [Group, Category, Post, Product, Slider] 
+```
+- Copy your image folder to `database/seeders/images/`  
+- Then seed images for models: [Group, Category, Post, Product, Slider]:
 
 ```bash
 php artisan seeding:image Product digital
@@ -73,36 +68,35 @@ Or to seed all models:
 php artisan seeding:all digital
 ```
 
-> First parameter is Model, Second is image seeder directory available [bag, clothe, digital, sport, posts, makeup]
-> You can create your directory and put your image into new directory then use image seeder
+> First parameter is Model, second is image seeder directory available [bag, clothe, digital, sport, posts, makeup].  
+> You can create your directory and put your images into it, then use the image seeder.
 
-## Requirement
+## Requirements
 
-- php 8.2.x or above [ `php-gd`, `sqlite3`, `php-soap`]
-- mysql or mariadb or sqlite
-- composer
-- recommends install imagemagick on server to more image performance
+- PHP 8.2.x or above [ `php-gd`, `sqlite3`, `php-soap`]
+- MySQL, MariaDB, or SQLite
+- Composer
+- Recommend installing ImageMagick on the server for better image performance
 
-## Deploy guide
+## Deploy Guide
 
-We recommend deploy xShop on VPS, so create database and run this commands:
+We recommend deploying xShop on VPS. Create a database and run these commands:
 
 ```bash
 cd /home/[yourUsername]/[pathOfYourWebsitePublicHTML]
-git clone  https://github.com/4xmen/xshop.git . # if this command not work make empty this folder
+git clone  https://github.com/4xmen/xshop.git . # if this command does not work, make the folder empty first
 cp .env.example .env
-nano .env # edit your config db, url, etc.
+nano .env # edit your config db, URL, etc.
 composer install
 php artisan migrate:fresh --seed
 php artisan storage:link
-php key:generate
-npm install 
+php artisan key:generate
+npm install
 php artisan client
 npm run build
 ```
 
-## Make your site optimize & production mode
-
+## Optimize for Production Mode
 
 ```bash
 nano .env # make APP_DEBUG false, APP_ENV production
@@ -110,57 +104,56 @@ php artisan optimize
 composer install --optimize-autoloader --no-dev
 ```
 
-## Add cron job
+## Add Cron Job
 
-You must add crontab for your project:
+You must add a crontab for your project:
 
 ```bash
 crontab -e
 ```
 
 Add this line:
+
 ```bash
 * * * * * cd /home/[yourusername]/[your-public-html-project-root] && php artisan schedule:run >> /dev/null 2>&1
 ```
 
+## Make xController
 
-## make xController
-
-Controller with log and semi-automatic CURD with logs  
-User [`model`]
+Controller with log and semi-automatic CRUD with logs:  
+User [`model`]:
 
 ```bash
 php artisan make:xcontroller User
 ```
 
-## make theme part
+## Make Theme Part
 
-Theme part usable in area
+Theme parts usable in specific areas.
 
-PartName [`theme aprt name`]
-
-segmentName [`group`, `category`, `preloader`, ...],
+- PartName [`theme part name`]
+- SegmentName [`group`, `category`, `preloader`, ...]:
 
 ```bash
-php artisan  make:part PartName segmentName
+php artisan make:part PartName segmentName
 ```
 
-## client optimize
+## Client Optimize
 
-Optimize client assets, `scss`,`js`,`css`
+Optimize client assets (`scss`, `js`, `css`):
 
 ```bash
 php artisan client
 php artisan build
 ```
 
-### theme parts file
+### Theme Part Files
 
-- PartName.php: `onCreate`, `onRemove`, `onMount` actions of theme part
-- PartName.blade.php: your theme part blade code
-- PartName.scss: your theme part scss
-- PartName.js: your theme part javascript
-- screenshot.png: screenshot preview of theme part
+- `PartName.php`: `onCreate`, `onRemove`, `onMount` actions of the theme part
+- `PartName.blade.php`: Your theme part blade code
+- `PartName.scss`: Your theme part SCSS
+- `PartName.js`: Your theme part JavaScript
+- `screenshot.png`: Screenshot preview of the theme part
 
 ## Demo
 
@@ -178,13 +171,11 @@ php artisan build
 
 ![5](https://raw.githubusercontent.com/A1Gard/xshop-installer-assets/master/screenshots/xshop-screenshot5.jpg)
 
-
-
 ## Access to xShop/v1
+
 > [!WARNING]  
 > xShop/v1 available here: <a href="https://github.com/4xmen/xshop.v1">https://github.com/4xmen/xshop.v1</a>
 
-
 <p align="center"> 
-    Developed With Love ! ❤️
+    Developed With Love! ❤️
 </p>
