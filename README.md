@@ -174,7 +174,7 @@ php artisan build
 ## Access to xShop/v1
 
 > [!WARNING]  
-> xShop/v1 available here: <a href="https://github.com/4xmen/xshop.v1">https://github.com/4xmen/xshop.v1</a>
+> xShop/v1 available here: <a href="https://github.com/Tonkung004/laravel-shop">https://github.com/Tonkung004/laravel-shop</a>
 
 <p align="center"> 
     Developed With Love! ❤️
