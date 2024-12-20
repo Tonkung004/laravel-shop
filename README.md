@@ -2,7 +2,7 @@
     <img width="250" src="resources/images/xshop-logo.svg" alt="xShop logo">
 </div>
 
-# xShop/v2
+# Shop
 
 > [!NOTE]
 > xShop is an open source shop developed in laravel, very customizable!
