@@ -167,7 +167,7 @@ php artisan build
 
 ![5](https://raw.githubusercontent.com/A1Gard/xshop-installer-assets/master/screenshots/xshop-screenshot5.jpg)
 
-## Access to xShop/v1
+## Access to Shop/v1
 
 > [!DETAILS]  
 > Shop/v1 available here: <a href="https://github.com/Tonkung004/laravel-shop">https://github.com/Tonkung004/laravel-shop</a>
